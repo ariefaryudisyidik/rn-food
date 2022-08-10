@@ -6,6 +6,10 @@ import ResultsDetail from './ResultsDetail';
 const ResultsList = ({title, results}) => {
   const navigation = useNavigation();
 
+  if (!results.length) {
+    return null;
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
@@ -36,11 +40,12 @@ export default ResultsList;
 const styles = StyleSheet.create({
   container: {
     marginBottom: 10,
+    paddingRight: 15,
   },
   title: {
     fontSize: 18,
     fontWeight: 'bold',
-    marginLeft: 15,
+    marginHorizontal: 15,
     marginBottom: 5,
   },
 });

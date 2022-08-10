@@ -24,10 +24,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#F0EEEE',
     height: 50,
     borderRadius: 5,
-    marginTop: 8,
     marginHorizontal: 15,
+    paddingHorizontal: 16,
     flexDirection: 'row',
-    marginBottom: 10,
+    marginVertical: 10,
   },
   inputStyle: {
     flex: 1,
