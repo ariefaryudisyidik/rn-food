@@ -1,11 +1,20 @@
 import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
-import {useNavigation} from '@react-navigation/native';
+import React, {useState, useEffect} from 'react';
+import yelp from '../api/yelp';
 
-const ResultsShowScreen = ({route}) => {
-  const navigation = useNavigation();
+const ResultsShowScreen = ({route, navigation}) => {
+  const [result, setResult] = useState(null);
   const {id} = route.params;
-  console.log(id);
+  console.log(result);
+
+  const getResult = async ids => {
+    const response = await yelp.get(`/${ids}`);
+    setResult(response.data);
+  };
+
+  useEffect(() => {
+    getResult(id);
+  }, []);
 
   return (
     <View>
