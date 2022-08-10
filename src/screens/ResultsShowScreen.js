@@ -1,7 +1,12 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
+import {useNavigation} from '@react-navigation/native';
 
-const ResultsShowScreen = () => {
+const ResultsShowScreen = ({route}) => {
+  const navigation = useNavigation();
+  const {id} = route.params;
+  console.log(id);
+
   return (
     <View>
       <Text>Results Show</Text>
